@@ -5,7 +5,7 @@ import charity from './images/charity.avif'
 import food from './images/food.avif'
 import fitness from './images/fitness.avif'
 import { useState } from 'react';
-import Navbar from './../../components/Navbar/Navbar'
+import Navbar from '../../components/Navbar/Navbar'
 const Events = () => {
   return (
     <div className="events-page">

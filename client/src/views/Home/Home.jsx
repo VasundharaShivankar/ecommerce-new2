@@ -10,6 +10,7 @@ import bazaar3 from './images/bazaar3.webp'
 import bazaar4 from './images/bazaar4.webp'
 import { Link } from 'react-router-dom';
 import Footer from "../../components/Footer/Footer"
+import Navbar from "../../components/Navbar/Navbar"
 
 function Home() {
   return (
@@ -27,7 +28,7 @@ function Home() {
           </Link>
         </div>
       </section>
-      
+      <Navbar/>
       {/* Product Cards */}
       <h1 style={{textAlign:'center',fontSize:'25px', marginTop:'40px', fontWeight:'bold'}}>GRAND BAZAAR</h1><br/>
       <section className="features-section">
@@ -35,33 +36,34 @@ function Home() {
         <Link to="/offers">
           <img src={bazaar1} alt="Community" className='card-img'/>
           </Link>
-          <h3>Join the Community</h3>  
+          <h3>Elegant clocks, timeless home upgrade!</h3>  
         </div>
 
         <div className="product-card">
         <Link to="/offers">
           <img src={bazaar2} alt="Quality Products" className='card-img'/>
           </Link>
-          <h3>Quality Products</h3>
+          <h3>Nature's touch, home's best friend!</h3>
         </div>
 
         <div className="product-card">
         <Link to="/offers">
           <img src={bazaar3} alt="Exclusive Offers" className='card-img'/>
           </Link>
-          <h3>Exclusive Offers</h3>
+          <h3>Glamour reflected, perfect home decor!</h3>
         </div>
 
         <div className="product-card">
         <Link to="/offers">
           <img src={bazaar4} alt="Exclusive Offers" className='card-img'/>
           </Link>
-          <h3>Exclusive Offers</h3>
+          <h3>Express yourself with unique Art Prints!</h3>
         </div>
       </section>
 
 
       {/* Features Section */}
+      <h1 style={{textAlign:'center',fontSize:'25px', marginTop:'40px', fontWeight:'bold'}}>FOLLOW TRENDS</h1><br/>
       <section className="features-section">
         <div className="feature-card">
           <img src={front} alt="Community" className='card-img'/>

@@ -1,31 +1,27 @@
 import React from 'react';
-import './Navbar.css'; 
-import { Link } from 'react-router-dom'; 
-import logo from './logo.jpg'
+import { Link } from 'react-router-dom';
+import './Navbar.css';
+
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <div >
-        <h7>NeighbourNet</h7> <img className="navbar-logo" src={logo} />     
-        </div>
+      <div className="navbar-brand">
+        <Link to="/" className="navbar-logo">
+          CasaBloom
+        </Link>
+      </div>
       <ul className="navbar-links">
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" className="navbar-link">Home</Link>
         </li>
         <li>
-          <Link to="/events">Events</Link>
+          <Link to="/offers" className="navbar-link">Offers</Link>
         </li>
         <li>
-          <Link to="/login">Login</Link>
+          <Link to="/products" className="navbar-link">Products</Link>
         </li>
         <li>
-          <Link to="/forum">Discussion Forum</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/reviews">Reviews</Link>
+          <Link to="/about" className="navbar-link">About</Link>
         </li>
       </ul>
     </nav>

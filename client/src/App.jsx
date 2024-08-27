@@ -6,6 +6,7 @@ import About from './views/About/About'
 import Review from './views/Review/Review'
 import Login from './views/Login/Login'
 import Events from './views/Events/Events'
+import Offers from './views/Offers/Offers'
 
 function App() {
   const router =createBrowserRouter([
@@ -28,6 +29,10 @@ function App() {
     {
       path:"/events",
       element:<Events></Events>
+    },
+    {
+      path:"/offers",
+      element:<Offers></Offers>
     },
   ])
   
