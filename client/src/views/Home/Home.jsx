@@ -1,7 +1,13 @@
 import React from 'react';
 import './Home.css'
-import bgimg from './bgimg.jpg';
-import front from './front.jpg';
+import bgimg from './images/bgimg.jpg';
+import front from './images/front.jpg';
+import quality from './images/quality.webp'
+import gift from './images/gift.png'
+import bazaar1 from './images/bazaar1.webp'
+import bazaar2 from './images/bazaar2.webp'
+import bazaar3 from './images/bazaar3.webp'
+import bazaar4 from './images/bazaar4.webp'
 import { Link } from 'react-router-dom';
 import Footer from "../../components/Footer/Footer"
 
@@ -11,7 +17,7 @@ function Home() {
       {/* Hero Section */}
       <section className="hero-section" style={{ backgroundImage: `url(${bgimg})` }}>
         <div className="overlay">
-          <h1>Welcome to Neighbour Net</h1>
+          <h1>Welcome to CasaBloom</h1>
           <p>
             Transform Your Space into a Sanctuary with Our Curated Home Decor Collection.
             Elevate Every Room with Unique, Timeless Pieces Crafted to Inspire and Delight.
@@ -21,11 +27,44 @@ function Home() {
           </Link>
         </div>
       </section>
+      
+      {/* Product Cards */}
+      <h1 style={{textAlign:'center',fontSize:'25px', marginTop:'40px', fontWeight:'bold'}}>GRAND BAZAAR</h1><br/>
+      <section className="features-section">
+        <div className="product-card">
+        <Link to="/offers">
+          <img src={bazaar1} alt="Community" className='card-img'/>
+          </Link>
+          <h3>Join the Community</h3>  
+        </div>
+
+        <div className="product-card">
+        <Link to="/offers">
+          <img src={bazaar2} alt="Quality Products" className='card-img'/>
+          </Link>
+          <h3>Quality Products</h3>
+        </div>
+
+        <div className="product-card">
+        <Link to="/offers">
+          <img src={bazaar3} alt="Exclusive Offers" className='card-img'/>
+          </Link>
+          <h3>Exclusive Offers</h3>
+        </div>
+
+        <div className="product-card">
+        <Link to="/offers">
+          <img src={bazaar4} alt="Exclusive Offers" className='card-img'/>
+          </Link>
+          <h3>Exclusive Offers</h3>
+        </div>
+      </section>
+
 
       {/* Features Section */}
       <section className="features-section">
         <div className="feature-card">
-          <img src={front} alt="Community" />
+          <img src={front} alt="Community" className='card-img'/>
           <h3>Join the Community</h3>
           <p>
             Become a part of our vibrant community and stay updated with the latest trends and offers.
@@ -35,7 +74,7 @@ function Home() {
           </Link>
         </div>
         <div className="feature-card">
-          <img src={front} alt="Quality Products" />
+          <img src={quality} alt="Quality Products" className='card-img'/>
           <h3>Quality Products</h3>
           <p>
             Explore our wide range of high-quality home decor products that suit every style and budget.
@@ -45,7 +84,7 @@ function Home() {
           </Link>
         </div>
         <div className="feature-card">
-          <img src={front} alt="Exclusive Offers" />
+          <img src={gift} alt="Exclusive Offers" className='card-img'/>
           <h3>Exclusive Offers</h3>
           <p>
             Sign up for our newsletter and get access to exclusive deals and discounts.
