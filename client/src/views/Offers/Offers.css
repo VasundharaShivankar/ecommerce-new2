@@ -1,7 +1,8 @@
 .offers-container {
     background-color: #f9f9f9;
-    margin-top:300px;
+    margin-top:1500px;
     width:200vh;
+    margin-bottom: 50px;
   }
   
   .offers-title {
@@ -33,7 +34,7 @@
   
   .offer-image {
     width: 100%;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
   }
   
@@ -57,5 +58,21 @@
     .offer-card {
       margin-bottom: 1rem;
     }
+  }
+
+  .offer-prices {
+    margin-top: 1rem;
+  }
+  
+  .original-price {
+    font-size: 1rem;
+    text-decoration: line-through;
+    color: #888;
+  }
+  
+  .offer-price {
+    font-size: 1.2rem;
+    color: #d9534f;
+    font-weight: bold;
   }
   
