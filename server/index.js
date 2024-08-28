@@ -1,53 +1,76 @@
 import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import dotenv from "dotenv";
+import bcrypt from "bcrypt"
+import User from "./models/User.js"; 
 
-import mongoose, { connect } from "mongoose";
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-
-import cors from "cors";
-
-import dotenv from "dotenv";
-dotenv.config();
-
 app.use(cors());
 app.use(express.json());
 
+// Database connection function
 const connectDB = async () => {
-    mongoose.connect(process.env.MONGO_URL);
-    console.log("Database Connected");
-  };
-  connectDB();
+    try {
+        await mongoose.connect(process.env.MONGO_URL, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log("Database Connected");
+    } catch (error) {
+        console.error("Database connection failed:", error.message);
+        process.exit(1); // Exit process with failure
+    }
+};
+connectDB();
 
+// Health check route
 app.get("/health", (req, res) => {
     res.json({
-      success: true,
-      message: "Server is Running",
-      data: null,
+        success: true,
+        message: "Server is Running",
+        data: null,
     });
-  });
+});
 
-
-  app.post('/login', async (req, res) => {
+// Login route
+app.post('/login', async (req, res) => {
     console.log("Login request received");
     console.log("Request body:", req.body);
     
     const { email, password } = req.body;
-    try {
-        const user = await User.findOne({ email });
-        if (!user) return res.status(400).json({ message: 'User not found' });
 
+    try {
+        // Check if the user exists
+        const user = await User.findOne({ email: new RegExp('^' + email + '$', 'i') });
+
+        if (!user) {
+            console.log("User not found");
+            return res.status(400).json({ message: 'User not found' });
+        }
+
+        // Compare the provided password with the stored hashed password
         const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) return res.status(400).json({ message: 'Invalid credentials' });
+        if (!isMatch) {
+            console.log("Invalid credentials");
+            return res.status(400).json({ message: 'Invalid credentials' });
+        }
 
         // Generate a JWT token
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        console.log("Token generated:", token);
+
+        // Respond with the token
         res.json({ token });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        console.error("Error during login:", error);  // Log the full error
+        res.status(500).json({ message: 'Server error', error: error.message });
     }
 });
 
-
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Start the server
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
