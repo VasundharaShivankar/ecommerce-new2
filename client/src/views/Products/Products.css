@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin-top:2370px;
+    margin-top:3130px;
     width:200vh;
 }
 
@@ -13,7 +13,7 @@
     height: 400px; /* Adjust based on your image */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .hero-overlay {
@@ -31,6 +31,7 @@
 
 .products-container {
     background-color: #f9f9f9;
+    margin:5px 5px;
 }
 
 .products-title {
@@ -54,7 +55,8 @@
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    padding: 1.5rem;
+    padding: 1.1rem;
+    height: auto;
 }
 
 .product-card:hover {
@@ -85,17 +87,16 @@
 }
 
 .product-name {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #444;
-    margin: 1rem 0;
-    text-align: center;
+    margin: 0rem 0;
+    text-align: left;
 }
 
 .product-rating {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
+    align-items: left;
+    justify-content: left;
 }
 
 .filled-star {
@@ -116,7 +117,7 @@
     font-size: 1.2rem;
     color: #d9534f;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
 }
 
 .add-to-cart-button {
