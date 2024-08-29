@@ -32,7 +32,7 @@ const offers = [
     description: "Enhance your home decor with our BOGO offer on select items.",
     imageUrl: offer3,
     originalPrice: "₹15,000",
-    offerPrice: "₹7,500", // Assuming ₹7,500 per item
+    offerPrice: "₹7,500", 
   },
   {
     title: "30% Off on Modular Kitchen Sets",

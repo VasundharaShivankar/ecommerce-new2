@@ -5,7 +5,7 @@ import Home from './views/Home/Home'
 import About from './views/About/About'
 import Review from './views/Review/Review'
 import Login from './views/Login/Login'
-import Events from './views/Events/Events'
+import Products from './views/Products/Products'
 import Offers from './views/Offers/Offers'
 
 function App() {
@@ -27,8 +27,8 @@ function App() {
       element:<Login></Login>
     },
     {
-      path:"/events",
-      element:<Events></Events>
+      path:"/products",
+      element:<Products></Products>
     },
     {
       path:"/offers",
