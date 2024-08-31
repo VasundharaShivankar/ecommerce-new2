@@ -19,10 +19,6 @@ function App() {
       element:<About></About>
     },
     {
-      path:"/review",
-      element:<Review></Review>
-    },
-    {
       path:"/login",
       element:<Login></Login>
     },
@@ -33,6 +29,10 @@ function App() {
     {
       path:"/offers",
       element:<Offers></Offers>
+    },
+    {
+      path:"/signup",
+      element:<SignUp></SignUp>
     },
   ])
   
