@@ -52,7 +52,7 @@ function SignUp() {
         <div className="login-content">
           <img src={loginImage} className="login-image" ref={animateLoginImage} alt="Login" />
           <div className="login-form">
-            <h2 className="form-title">USER SIGN UP</h2>
+    start         <h2 className="form-title">USER SIGN UP</h2>
             <label className="form-label">Full Name</label>
             <input
               type="password"
